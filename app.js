@@ -75,7 +75,7 @@ app.get("/posts/:postId", function(req, res){
 
   const requestedPostId = req.params.postId;
   
-    Post.findOne({_id: requestedPostId}, function(err, post){
+  Post.findOne({_id: requestedPostId}, function(err, post){
       res.render("post", {
         title: post.title,
         content: post.content
@@ -83,6 +83,8 @@ app.get("/posts/:postId", function(req, res){
     });
   
   });
+  
+
 
 let port = process.env.PORT;
 if (port == null || port == "") {
